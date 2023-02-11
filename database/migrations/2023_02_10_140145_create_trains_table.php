@@ -20,8 +20,8 @@ return new class extends Migration
             $table->string('arrival_station', 255);
             $table->dateTime('departure_time');
             $table->dateTime('arrival_time');
-            $table->string('train_number', 255);
-            $table->tinyInteger('number_of_cabs')->nullable();
+            $table->string('train_number', 255)->unique();
+            $table->tinyInteger('number_of_cabs')->notnull();
             $table->tinyInteger('in_time')->unsigned()->default(1);
             $table->tinyInteger('cancelled')->unsigned()->default(0);
             $table->timestamps();
